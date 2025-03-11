@@ -9,7 +9,7 @@ pipeline {
     stage('CheckOut') {
       steps {
         echo 'Checkout the source code from GitHub'
-        git branch: 'main', url: 'https://github.com/devopscbabu/InsureProject-Dec3Batch.git'
+        git branch: 'main', url: 'https://github.com/Balunideepak/insuranceproject.git'
             }
     }
     
@@ -28,7 +28,7 @@ pipeline {
     
     stage('Docker Image Creation') {
       steps {
-        sh 'docker build -t cbabu85/insureprojectdec3:latest .'
+        sh 'docker build -t balunideepak/insureprojectmar11:latest .'
             }
     }
     stage('DockerLogin') {
@@ -41,7 +41,7 @@ pipeline {
 
     stage('Push Image to DockerHub') {
       steps {
-        sh 'docker push cbabu85/insureprojectdec3:latest'
+        sh 'docker push balunideepak/insureprojectmar11:latest'
             }
     }
     stage('Deploy Application using Ansible') {
