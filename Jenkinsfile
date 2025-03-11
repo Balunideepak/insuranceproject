@@ -38,11 +38,10 @@ pipeline {
         sh 'docker push balunideepak/insureprojectmar11:latest'
             }
     }
-    stage('Deploy Application using Ansible') {
-      steps {
-        ansiblePlaybook credentialsId: 'private-key', disableHostKeyChecking: true, installation: 'ansible', inventory: '/etc/ansible/hosts', playbook: 'deploy.yml'
+    stage('port expose'){
+            steps{
+                sh 'docker run -dt -p 8082:8082 --name c001 balunideepak/insureprojectmar11:latest'
             }
-    }
-
+        }       
   }
 }
