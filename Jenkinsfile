@@ -40,7 +40,7 @@ pipeline {
     }
     stage('port expose'){
             steps{
-                sh 'docker run -dt -p 9090:8081 --name c001 balunideepak/insureprojectmar11:latest'
+                sh 'docker run -dt -p 8084:8081 --name c001 balunideepak/insureprojectmar11:latest'
             }
         }       
   }
